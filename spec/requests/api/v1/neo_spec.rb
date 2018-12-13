@@ -14,7 +14,6 @@ describe 'Near Earth Objects Endpoint' do
 
         expect(neos.first).to include(:name)
         expect(neos.first).to include(:magnitude)
-        expect(neos.first).to include(:diameter)
         expect(neos.first).to include(:date)
         expect(neos.first).to include(:speed)
         expect(neos.first).to include(:miss_distance)

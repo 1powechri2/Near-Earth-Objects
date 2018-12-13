@@ -20,9 +20,19 @@ class NeoPresenter
 
   def neos
     if @sort != nil
-      neo_objects.sort_by do |object|
-        object.send(@sort.to_s)
-      end.reverse
+      if @sort == 'miss_distance'
+        neo_objects.sort_by do |object|
+          object.send(@sort.to_s)
+        end
+      elsif @sort == 'diameter'
+        neo_objects.sort_by do |object|
+          object.send(@sort.to_s)[:estimated_diameter_max]
+        end.reverse
+      else
+        neo_objects.sort_by do |object|
+          object.send(@sort.to_s)
+        end.reverse
+      end
     else
       neo_objects
     end
