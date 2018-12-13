@@ -10,7 +10,7 @@ class NeoPresenter
       @nasa_neos[:near_earth_objects][key].map do |neo_data|
         NearEarthObject.new(neo_data)
       end
-    end
+    end.flatten
   end
 
   def nasa_neos_keys

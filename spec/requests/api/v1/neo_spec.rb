@@ -10,9 +10,16 @@ describe 'Near Earth Objects Endpoint' do
 
         expect(response.status).to eq 200
 
-        neos = JSON.parse(response.body)
+        neos = JSON.parse(response.body, symbolize_names: true)
 
-        expect(neos.first.class).to eq(NearEarthObject)
+        expect(neos.first).to include(:name)
+        expect(neos.first).to include(:magnitude)
+        expect(neos.first).to include(:diameter)
+        expect(neos.first).to include(:date)
+        expect(neos.first).to include(:speed)
+        expect(neos.first).to include(:miss_distance)
+        expect(neos.first).to include(:hazard)
+        expect(neos.first).to include(:sentry_object)
       end
     end
   end
