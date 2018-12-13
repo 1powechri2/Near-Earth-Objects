@@ -6,6 +6,6 @@ class Api::V1::NeoController < ApplicationController
 private
 
   def neo_params
-    params.permit(:start_date, :end_date, :sort)
+    params.permit(:start_date, :end_date, :sort, :filter)
   end
 end
