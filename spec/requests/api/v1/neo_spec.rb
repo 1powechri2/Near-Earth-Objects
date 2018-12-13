@@ -9,7 +9,9 @@ describe 'Near Earth Objects Endpoint' do
 
       expect(response.status).to eq 200
 
-      neos = JSON.parse(response.body, symbolize_names: true)
+      neos = JSON.parse(response.body)
+
+      expect(neos.first.class).to eq(NearEarthObject)
     end
   end
 end
