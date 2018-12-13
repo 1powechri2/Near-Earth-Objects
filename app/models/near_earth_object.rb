@@ -1,0 +1,3 @@
+class NearEarthObject
+
+end

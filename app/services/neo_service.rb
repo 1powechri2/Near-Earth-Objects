@@ -4,7 +4,7 @@ class NeoService
     @end_date = end_date
   end
 
-  def neo_data
+  def neos
     conn = Faraday.new(url: "https://api.nasa.gov") do |faraday|
     faraday.adapter Faraday.default_adapter
     end
