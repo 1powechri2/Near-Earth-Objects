@@ -39,7 +39,7 @@ it more meaning.
   you provided.
 
 
-If you wish to clone and use this api you'll need `Ruby version 2.4.1`.
+If you wish to update or change this API for your own application you'll need `Ruby version 2.4.1`.
 You'll also need to register for an API key from NASA. In order to use
 this key properly you'll have to utilize the figaro gem which is already
 included in the gemfile.
