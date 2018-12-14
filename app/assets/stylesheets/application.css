@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+.header {
+  height: 700px;
+  background-image: url(/assets/VUFQ.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center
+}
+
+.hello {
+  margin-top: 0;
+  padding-top: 250px;
+  color: Green;
+  font-size: 500%;
+}
+
+.link {
+  margin-top: 0;
+  font-size: 200%;
+}
