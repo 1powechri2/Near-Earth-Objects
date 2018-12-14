@@ -15,13 +15,13 @@ it more meaning.
 `https://neos-neos-neos.herokuapp.com/api/v1/neo?start_date=2018-12-6&end_date=2018-12-12`
 
   Using this endpoint you can attach two different queries which are sort and filter.
-  
+
   example:
 
 `/api/v1/neo?start_date=2018-12-6&end_date=2018-12-12&filter=hazard&sort=miss_distance`
 
   The filter query only filters hazardous NEOs so by setting filter=hazard you
-  will only get a list of NEOs which NASA considers to be threatening to Earth.
+  will get a list of the NEOs which NASA considers to be threatening to Earth.
 
   The sort query takes four different options:
 
@@ -43,7 +43,7 @@ If you wish to clone and use this api you'll need `Ruby version 2.4.1`.
 You'll also need to register for an API key from NASA. In order to use
 this key properly you'll have to utilize the figaro gem which is already
 included in the gemfile.
-After you fork or clone the repository simply run `bundle` and then follow
+After you fork and clone the repository simply run `bundle` and then follow
 the instructions [here](https://github.com/laserlemon/figaro) to secure
 your NASA API key in your app. Once you do this you should be ready to run
-'rails s'.
+'rails s' or 'rspec' in order to see if the app is working properly on your machine.
