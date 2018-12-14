@@ -1,24 +1,48 @@
-# README
+# Near Earth Objects
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A near earth object is any undefined cosmic body whose orbit brings it within
+a specific proximity of earth. NASA records these NEOs daily and makes the
+information available through a free api available [here](https://api.nasa.gov/api.html#NeoWS)
 
-Things you may want to cover:
+The purpose of this api is to organize the data from NASA's api in order to give
+it more meaning.
 
-* Ruby version
+*Endpoints
 
-* System dependencies
+    There is one main endpoint which takes two dates that can be no more than
+    seven days apart.
 
-* Configuration
+`https://neos-neos-neos.herokuapp.com/api/v1/neo?start_date=2018-12-6&end_date=2018-12-12`
 
-* Database creation
+    Using this endpoint you can attach two different queries which are sort and filter
+    example:
 
-* Database initialization
+`/api/v1/neo?start_date=2018-12-6&end_date=2018-12-12&filter=hazard&sort=miss_distance`
 
-* How to run the test suite
+    The filter query only filters hazardous NEOs so by setting filter=hazard you
+    will only get a list of NEOs which NASA considers to be threatening to Earth.
 
-* Services (job queues, cache servers, search engines, etc.)
+    The sort query takes four different options:
 
-* Deployment instructions
+        *sort=magnitude will return the collection of NEOs ordered from highest magnitude to
+        lowest
+        *sort=speed will return the collection of NEOs ordered from highest speed to
+        lowest
+        *sort=diameter will return the collection of NEOs ordered from largest to
+        smallest width
+        *sort=miss_distance will return the collection of NEOs ordered from nearest to
+        furthest proximity of Earth.
 
-* ...
+    So a query such as filter=hazard&sort=miss_distance will give you the NEO
+    which is considered dangerous and was the closest to Earth for the time span
+    you provided.
+
+
+If you wish to clone and use this api you'll need `Ruby version 2.4.1`.
+You'll also need to register for an API key from NASA. In order to use
+this key properly you'll have to utilize the figaro gem which is already
+included in the gemfile.
+After you fork or clone the repository simply run `bundle` and then follow
+the instructions [here](https://github.com/laserlemon/figaro) to secure
+your NASA API key in your app. Once you do this you should be ready to run
+'rails s'.
