@@ -15,6 +15,7 @@ it more meaning.
 `https://neos-neos-neos.herokuapp.com/api/v1/neo?start_date=2018-12-6&end_date=2018-12-12`
 
   Using this endpoint you can attach two different queries which are sort and filter.
+  
   example:
 
 `/api/v1/neo?start_date=2018-12-6&end_date=2018-12-12&filter=hazard&sort=miss_distance`
